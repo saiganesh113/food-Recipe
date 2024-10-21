@@ -1,0 +1,22 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    border-radius: 15px;
+    border: none;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #343a40;
+}
+
+#recipe-list li {
+    margin-top: 10px;
+}
+
+.container {
+    max-width: 600px;
+}
