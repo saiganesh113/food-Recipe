@@ -37,7 +37,7 @@ const recipesData = {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    displayRecipes(recipesData);
+    // Don't display recipes initially; wait for user input
 });
 
 document.getElementById('ingredient-form').addEventListener('submit', function (e) {
@@ -45,7 +45,9 @@ document.getElementById('ingredient-form').addEventListener('submit', function (
 
     const ingredientsInput = document.getElementById('ingredients').value.trim().toLowerCase();
     if (!ingredientsInput) {
-        displayRecipes(recipesData);
+        // If no input is provided, clear the recipe list
+        const recipeList = document.getElementById('recipe-list');
+        recipeList.innerHTML = '<li class="list-group-item">Please enter ingredients to search for recipes.</li>';
         return;
     }
 

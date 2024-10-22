@@ -218,8 +218,14 @@ document.getElementById('start-test').addEventListener('click', function () {
     const video = document.getElementById('camera-stream');
     video.classList.remove('camera-hidden');
 
-    // Request access to the camera
-    navigator.mediaDevices.getUserMedia({ video: true })
+    // Request access to the back camera
+    const constraints = {
+        video: {
+            facingMode: { exact: "environment" }
+        }
+    };
+
+    navigator.mediaDevices.getUserMedia(constraints)
         .then((stream) => {
             video.srcObject = stream;
 
@@ -246,3 +252,5 @@ document.getElementById('start-test').addEventListener('click', function () {
             alert('Unable to access the camera. Please check permissions.');
         });
 });
+
+
